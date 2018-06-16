@@ -7,8 +7,25 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <div>
+    <label>Text to encode:</label>
+    <ion-input type="text" [(ngModel)]="inputText"></ion-input>
+
+    <button ion-button block (click)="encode()">Encode</button>
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <div>
+    <button ion-button block (click)="scan()">Scan</button>
+    <div *ngIf="scannedData.text">
+      <label>Your barcode is:</label>
+      <br>
+      <span>{{ scannedData.text }}</span>
+    </div>
+  </div>
+
 </ion-content>
